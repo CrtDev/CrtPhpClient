@@ -1,0 +1,13 @@
+{
+  "name": "crt/crt-php-client",
+  "type": "library",
+  "description": "PHP Client for CRT REST API",
+  "keywords": ["crt", "api", "client"],
+  "homepage": "https://github.com/CrtDev/CrtPhpClient",
+  "license": "MIT",
+  "require": {
+  },
+  "require-dev": {
+      "phpunit/phpunit": "*"
+  }
+}
