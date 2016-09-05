@@ -7,6 +7,7 @@
 class Resource
 {
     protected $apiAddress = 'http://crt.ru/api/v1/';
+//    protected $apiAddress = 'http://dev.crt.ru/api/v1/';
 
     public function __construct($apiAddress = false)
     {

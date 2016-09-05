@@ -8,16 +8,20 @@ require_once __DIR__.'/../init.php';
 
 class CrtTest extends \PHPUnit_Framework_TestCase
 {
-	public function testCatalog()
+	public function testCatalogMark()
 	{
 		$crt = new Crt();
-		$crt->setApiAddress('http://dev.crt.ru/api/v1/');
 
 		$this->assertContains(
 			'AUDI',
 			$crt->catalog()
 				->mark()[0]
 		);
+	}
+
+	public function testCatalogMarket()
+	{
+		$crt = new Crt();
 
 		$this->assertContains(
 			'JAPAN',
@@ -26,12 +30,43 @@ class CrtTest extends \PHPUnit_Framework_TestCase
 				->market()
 		);
 
+		$this->assertNotContains(
+			'JAPAN',
+			$crt->catalog()
+				->mark('AUDI')
+				->market()
+		);
+	}
+
+	public function testCatalogModel()
+	{
+		$crt = new Crt();
+
 		$this->assertContains(
-			'CAMRY',
+			'HARRIER',
 			$crt->catalog()
 				->mark('TOYOTA')
 				->market('JAPAN')
 				->model());
+
+		$this->assertNotContains(
+			'HARRIER',
+			$crt->catalog()
+				->mark('TOYOTA')
+				->market('USA')
+				->model());
+
+		$this->assertContains(
+			'HIGHLANDER',
+			$crt->catalog()
+				->mark('TOYOTA')
+				->market('USA')
+				->model());
+	}
+
+	public function testCatalogFrame()
+	{
+		$crt = new Crt();
 
 		$this->assertContains(
 			'ACV40',
@@ -43,6 +78,31 @@ class CrtTest extends \PHPUnit_Framework_TestCase
 		);
 
 		$this->assertContains(
+			'ACV40',
+			$crt->catalog()
+				->mark('TOYOTA')
+				->market('JAPAN')
+				->model('CAMRY')
+				->year(2016)
+				->frame()
+		);
+
+		$this->assertNotContains(
+			'ACV40',
+			$crt->catalog()
+				->mark('TOYOTA')
+				->market('JAPAN')
+				->model('CAMRY')
+				->year(2001)
+				->frame()
+		);
+	}
+
+	public function testCatalogYear()
+	{
+		$crt = new Crt();
+
+		$this->assertContains(
 			2016,
 			$crt->catalog()
 				->mark('TOYOTA')
@@ -50,6 +110,11 @@ class CrtTest extends \PHPUnit_Framework_TestCase
 				->model('CAMRY')
 				->year()
 		);
+	}
+
+	public function testCatalogLocation()
+	{
+		$crt = new Crt();
 
 		$frameLocations = $crt->catalog()
 			->mark('TOYOTA')
