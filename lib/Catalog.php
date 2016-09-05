@@ -6,12 +6,6 @@
 
 class Catalog extends Resource
 {
-    private $mark,
-            $market,
-            $model,
-            $frame,
-            $year;
-
     /**
      * @param null|string $mark
      * @return $this|array
@@ -19,13 +13,11 @@ class Catalog extends Resource
     public function mark($mark = null)
     {
         if (isset($mark)) {
-            $this->mark = $mark;
+            $this->query['mark'] = $mark;
             return $this;
         }
 
-        return $this->get([
-            'resource' => 'marks'
-        ]);
+        return $this->get('marks');
     }
 
     /**
@@ -35,16 +27,11 @@ class Catalog extends Resource
     public function market($market = null)
     {
         if (isset($market)) {
-            $this->market = $market;
+            $this->query['market'] = $market;
             return $this;
         }
 
-        return $this->get([
-            'resource' => 'markets',
-            'query' => [
-                'mark' => $this->mark
-            ]
-        ]);
+        return $this->get('markets');
     }
 
     /**
@@ -54,17 +41,11 @@ class Catalog extends Resource
     public function model($model = null)
     {
         if (isset($model)) {
-            $this->model = $model;
+            $this->query['model'] = $model;
             return $this;
         }
 
-        return $this->get([
-            'resource' => 'models',
-            'query' => [
-                'mark' => $this->mark,
-                'market' => $this->market
-            ]
-        ]);
+        return $this->get('models');
     }
 
     /**
@@ -74,18 +55,11 @@ class Catalog extends Resource
     public function frame($frame = null)
     {
         if (isset($frame)) {
-            $this->frame = $frame;
+            $this->query['frame'] = $frame;
             return $this;
         }
 
-        return $this->get([
-            'resource' => 'frames',
-            'query' => [
-                'mark' => $this->mark,
-                'market' => $this->market,
-                'model' => $this->model
-            ]
-        ]);
+        return $this->get('frames');
     }
 
     /**
@@ -95,18 +69,11 @@ class Catalog extends Resource
     public function year($year = null)
     {
         if (isset($year)) {
-            $this->year = $year;
+            $this->query['year'] = $year;
             return $this;
         }
 
-        return $this->get([
-            'resource' => 'years',
-            'query' => [
-                'mark' => $this->mark,
-                'market' => $this->market,
-                'model' => $this->model
-            ]
-        ]);
+        return $this->get('years');
     }
 
     /**
@@ -149,26 +116,26 @@ class Catalog extends Resource
      */
     private function checkParams()
     {
-        if (!isset($this->mark)) {
-            return 'Param mark is undefined';
-        }
-
-        if (!isset($this->market)) {
-            return "Param market is undefined";
-        }
-
-        if (!isset($this->model) || !$this->model) {
-            return "Param model is undefined";
-        }
-
-        if (
-            !(
-                (isset($this->frame) && $this->frame)
-                || (isset($this->year) && $this->year)
-            )
-        ) {
-            return "Param frame or year is undefined";
-        }
+//        if (!isset($this->mark)) {
+//            return 'Param mark is undefined';
+//        }
+//
+//        if (!isset($this->market)) {
+//            return "Param market is undefined";
+//        }
+//
+//        if (!isset($this->model) || !$this->model) {
+//            return "Param model is undefined";
+//        }
+//
+//        if (
+//            !(
+//                (isset($this->frame) && $this->frame)
+//                || (isset($this->year) && $this->year)
+//            )
+//        ) {
+//            return "Param frame or year is undefined";
+//        }
 
         return false;
     }

@@ -6,8 +6,10 @@
 
 class Resource
 {
-    protected $apiAddress = 'http://crt.ru/api/v1/';
-//    protected $apiAddress = 'http://dev.crt.ru/api/v1/';
+//    protected $apiAddress = 'http://crt.ru/api/v1/';
+    protected $apiAddress = 'http://dev.crt.ru/api/v1/';
+    protected $query = [];
+    protected $postFields = [];
 
     public function __construct($apiAddress = false)
     {
@@ -16,23 +18,13 @@ class Resource
         }
     }
 
-    protected function get($data)
+    protected function get($resource)
     {
-        if (!array_key_exists('query', $data)) {
-            $data['query'] = [];
-        }
-
-        if (!array_key_exists('postFields', $data)) {
-            $data['postFields'] = [];
-        }
-
         return json_decode(HttpClient::curlExec(
-            $this->apiAddress.$data['resource'].'.json',
+            $this->apiAddress.$resource.'.json',
             HttpMethod::GET,
-            $data['query'],
-            $data['postFields']
-        ), true)[$data['resource']];
+            $this->query,
+            $this->postFields
+        ), true)[$resource];
     }
-
-
 }
