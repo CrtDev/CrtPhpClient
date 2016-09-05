@@ -110,6 +110,28 @@ class CrtTest extends \PHPUnit_Framework_TestCase
 				->model('CAMRY')
 				->year()
 		);
+
+		$crt = new Crt();
+
+		$this->assertContains(
+			2016,
+			$crt->catalog()
+				->mark('TOYOTA')
+				->market('JAPAN')
+				->model('CAMRY')
+				->frame('ACV40')
+				->year()
+		);
+
+		$this->assertNotContains(
+			2001,
+			$crt->catalog()
+				->mark('TOYOTA')
+				->market('JAPAN')
+				->model('CAMRY')
+				->frame('ACV40')
+				->year()
+		);
 	}
 
 	public function testCatalogLocation()
