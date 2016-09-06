@@ -6,6 +6,8 @@
 
 require_once __DIR__.'/../init.php';
 
+use CrtApiClient\Crt;
+
 class CrtTest extends \PHPUnit_Framework_TestCase
 {
 	public function testCatalogMark()

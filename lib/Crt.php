@@ -4,6 +4,8 @@
  * Copyright (c) 2016 CRT. All rights reserved.
  */
 
+namespace CrtApiClient;
+
 class Crt
 {
     private $apiAddress;
