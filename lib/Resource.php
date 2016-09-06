@@ -6,8 +6,8 @@
 
 class Resource
 {
-//    protected $apiAddress = 'http://crt.ru/api/v1/';
-    protected $apiAddress = 'http://dev.crt.ru/api/v1/';
+    protected $apiAddress = 'http://crt.ru/api/v1/';
+//    protected $apiAddress = 'http://dev.crt.ru/api/v1/';
     protected $query = [];
     protected $postFields = [];
 

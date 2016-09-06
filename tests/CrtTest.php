@@ -138,35 +138,40 @@ class CrtTest extends \PHPUnit_Framework_TestCase
 	{
 		$crt = new Crt();
 
-		$frameLocations = $crt->catalog()
+		$frameGroups = $crt->catalog()
 			->mark('TOYOTA')
 			->market('JAPAN')
 			->model('CAMRY')
 			->frame('ACV40')
-			->location();
+			->group();
 
-		$this->assertEquals('Передняя подвеска', $frameLocations[50853]['location']);
-		$this->assertEquals('1-01-895', $frameLocations[50853]['parts'][0]['part']);
+		$this->assertEquals('ACV40', $frameGroups[0]['frame']);
+		$this->assertEquals('06.01 –', $frameGroups[0]['period']);
+		$this->assertEquals('Задняя подвеска', $frameGroups[0]['locations'][0]['location']);
+		$this->assertEquals(43598, $frameGroups[0]['locations'][0]['img']);
 
-		$yearLocations = $crt->catalog()
+		$firstPart = $frameGroups[0]['locations'][0]['parts'][0];
+		$this->assertEquals(1, $firstPart['position']);
+		$this->assertEquals('1-01-040', $firstPart['id']);
+		$this->assertEquals(2, $firstPart['qtyInPack']);
+
+		$yearGroups = $crt->catalog()
 			->mark('TOYOTA')
 			->market('JAPAN')
 			->model('CAMRY')
-			->year(2016)
-			->location();
+			->year(2001)
+			->group();
 
-		$this->assertEquals('Передняя подвеска', $yearLocations[50853]['location']);
-		$this->assertEquals('1-01-895', $yearLocations[50853]['parts'][0]['part']);
+		$this->assertEquals('ACV35', $yearGroups[0]['frame']);
 
-		$yearLocations = $crt->catalog()
+		$yearFrameGroups = $crt->catalog()
 			->mark('TOYOTA')
 			->market('JAPAN')
 			->model('CAMRY')
 			->frame('ACV40')
 			->year(2016)
-			->location();
+			->group();
 
-		$this->assertEquals('Передняя подвеска', $yearLocations[50853]['location']);
-		$this->assertEquals('1-01-895', $yearLocations[50853]['parts'][0]['part']);
+		$this->assertEquals('ACV40', $yearFrameGroups[0]['frame']);
 	}
 }

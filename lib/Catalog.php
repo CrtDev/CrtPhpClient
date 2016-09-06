@@ -80,63 +80,8 @@ class Catalog extends Resource
      * @return array locations with parts
      * @throws Exception
      */
-    public function location()
+    public function group()
     {
-        $error = $this->checkParams();
-        if ($error) {
-            throw new \Exception($error);
-        }
-
-        $array = [
-            50853 => [
-                'location' => 'Передняя подвеска',
-                'parts' => [
-                    [
-                        'id' => 38567,
-                        'part' =>'1-01-895'
-                    ],
-                ]
-            ],
-            50854 => [
-                'location' => 'Передняя подвеска',
-                'parts' => [
-                    [
-                        'id' => 38567,
-                        'part' =>'1-01-895'
-                    ],
-                ]
-            ],
-        ];
-
-        return $array;
-    }
-
-    /**
-     * @return bool|string
-     */
-    private function checkParams()
-    {
-//        if (!isset($this->mark)) {
-//            return 'Param mark is undefined';
-//        }
-//
-//        if (!isset($this->market)) {
-//            return "Param market is undefined";
-//        }
-//
-//        if (!isset($this->model) || !$this->model) {
-//            return "Param model is undefined";
-//        }
-//
-//        if (
-//            !(
-//                (isset($this->frame) && $this->frame)
-//                || (isset($this->year) && $this->year)
-//            )
-//        ) {
-//            return "Param frame or year is undefined";
-//        }
-
-        return false;
+        return $this->get('groups');
     }
 }
