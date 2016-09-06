@@ -17,7 +17,7 @@ class CrtTest extends \PHPUnit_Framework_TestCase
 		$this->assertContains(
 			'AUDI',
 			$crt->catalog()
-				->mark()[0]
+				->mark()
 		);
 	}
 
