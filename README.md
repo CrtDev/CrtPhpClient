@@ -4,7 +4,8 @@ CrtPhpClient
 Requirements
 ------------
 
-PHP 5.3 and later.
+ * PHP 5.3 and later
+ * php-curl
 
 Getting Started
 ---------------
@@ -26,7 +27,7 @@ $models = $crt->catalog()
 print_r($models);
 ```
 
-Response
+Response (array):
 
 ```json
 [
@@ -41,9 +42,27 @@ Response
     "AVENSIS",
     "..."
 ]
+```
 
-### Installation via Composer
+Installation via Composer
+-------------------------
 
 ```bash
 composer require crtdev/crt-php-client:dev-master
+```
+
+```php
+require __DIR__.'/vendor/autoload.php';
+
+use CrtPhpClient\Crt;
+
+$crt = new Crt();
+print_r($crt->catalog()->mark());
+```
+
+Tests
+-----
+
+```bash
+phpunit vendor/crtdev/crt-php-client
 ```
