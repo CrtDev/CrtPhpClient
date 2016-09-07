@@ -12,8 +12,17 @@ Getting Started
 
 [Downdload and unzip](https://github.com/CrtDev/CrtPhpClient/archive/master.zip)
 
+```bash
+$ wget https://github.com/CrtDev/CrtPhpClient/archive/master.zip
+$ unzip master.zip
+```
+
+
+
 ```php
-require_once('/path/to/crt-php-client/init.php');
+<?php
+
+require_once('CrtPhpClient-master/init.php');
 
 use CrtPhpClient\Crt;
 
@@ -21,7 +30,7 @@ $crt = new Crt();
 
 $models = $crt->catalog()
     ->mark('TOYOTA')
-    ->market('JAPAN');
+    ->market('JAPAN')
     ->model();
 
 print_r($models);
@@ -31,12 +40,6 @@ print_r($models);
 //     [0] => ALLEX
 //     [1] => ALLION
 //     [2] => ALPHARD
-//     [3] => ALTEZZA
-//     [4] => ALTEZZA GITA
-//     [5] => ARISTO
-//     [6] => AURIS
-//     [7] => AVALON
-//     [8] => AVENSIS
 //     ...
 ```
 
@@ -48,7 +51,6 @@ $ composer require crtdev/crt-php-client:dev-master
 ```
 
 ```php
-// example.php
 <?php
 require __DIR__.'/vendor/autoload.php';
 
@@ -69,5 +71,5 @@ Tests
 -----
 
 ```bash
-phpunit vendor/crtdev/crt-php-client
+$ phpunit vendor/crtdev/crt-php-client
 ```
