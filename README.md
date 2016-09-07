@@ -25,23 +25,19 @@ $models = $crt->catalog()
     ->model();
 
 print_r($models);
-```
 
-Response (array):
-
-```json
-[
-    "ALLEX",
-    "ALLION",
-    "ALPHARD",
-    "ALTEZZA",
-    "ALTEZZA GITA",
-    "ARISTO",
-    "AURIS",
-    "AVALON",
-    "AVENSIS",
-    "..."
-]
+// Array
+//  (
+//     [0] => ALLEX
+//     [1] => ALLION
+//     [2] => ALPHARD
+//     [3] => ALTEZZA
+//     [4] => ALTEZZA GITA
+//     [5] => ARISTO
+//     [6] => AURIS
+//     [7] => AVALON
+//     [8] => AVENSIS
+//     [9] => ...
 ```
 
 Installation via Composer
