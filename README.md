@@ -10,7 +10,7 @@ Requirements
 Getting Started
 ---------------
 
-[Downdload](https://github.com/CrtDev/CrtPhpClient/archive/master.zip)
+[Downdload and unzip](https://github.com/CrtDev/CrtPhpClient/archive/master.zip)
 
 ```php
 require_once('/path/to/crt-php-client/init.php');
@@ -37,14 +37,14 @@ print_r($models);
 //     [6] => AURIS
 //     [7] => AVALON
 //     [8] => AVENSIS
-//     [9] => ...
+//     ...
 ```
 
 Installation via Composer
 -------------------------
 
 ```bash
-composer require crtdev/crt-php-client:dev-master
+$ composer require crtdev/crt-php-client:dev-master
 ```
 
 ```php
@@ -56,17 +56,13 @@ use CrtPhpClient\Crt;
 
 $crt = new Crt();
 print_r($crt->catalog()->mark());
-```
 
-```bash
-php example.php
-
-# Array
-#   (
-#       [0] => AUDI
-#       [1] => BMW
-#       [2] => CHEVROLET
-#       ...
+// Array
+//   (
+//       [0] => AUDI
+//       [1] => BMW
+//       [2] => CHEVROLET
+//       ...
 ```
 
 Tests
