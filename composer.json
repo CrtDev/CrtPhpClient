@@ -1,5 +1,5 @@
 {
-  "name": "crt-dev/crt-php-client",
+  "name": "crtdev/crt-php-client",
   "type": "library",
   "description": "PHP Client for CRT REST API",
   "keywords": ["crt", "api", "client"],
