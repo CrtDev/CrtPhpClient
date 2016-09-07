@@ -4,7 +4,7 @@
  * Copyright (c) 2015 Mirchev Ideas Ltd. All rights reserved.
  */
 
-namespace CrtApiClient;
+namespace CrtPhpClient;
 
 class HttpMethod {
 	const GET = 'GET';

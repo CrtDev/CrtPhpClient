@@ -6,7 +6,7 @@
 
 require_once __DIR__.'/../init.php';
 
-use CrtApiClient\Crt;
+use CrtPhpClient\Crt;
 
 class CrtTest extends \PHPUnit_Framework_TestCase
 {

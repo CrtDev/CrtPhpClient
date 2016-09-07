@@ -4,7 +4,7 @@
  * Copyright (c) 2016 CRT. All rights reserved.
  */
 
-namespace CrtApiClient;
+namespace CrtPhpClient;
 
 class HttpClient
 {
