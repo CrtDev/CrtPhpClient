@@ -4,7 +4,7 @@
   "description": "PHP Client for CRT REST API",
   "keywords": ["crt", "api", "client"],
   "homepage": "https://github.com/CrtDev/CrtPhpClient",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "require": {
     "php": ">=5.3.0"
   },
@@ -13,5 +13,6 @@
     "psr-4": {
       "CrtPhpClient\\": "src/"
     }
-  }
+  },
+  "minimum-stability": "dev"
 }
