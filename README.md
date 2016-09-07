@@ -52,12 +52,25 @@ composer require crtdev/crt-php-client:dev-master
 ```
 
 ```php
+// example.php
+<?php
 require __DIR__.'/vendor/autoload.php';
 
 use CrtPhpClient\Crt;
 
 $crt = new Crt();
 print_r($crt->catalog()->mark());
+```
+
+```bash
+php example.php
+
+# Array
+#   (
+#       [0] => AUDI
+#       [1] => BMW
+#       [2] => CHEVROLET
+#       ...
 ```
 
 Tests

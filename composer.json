@@ -5,11 +5,8 @@
   "keywords": ["crt", "api", "client"],
   "homepage": "https://github.com/CrtDev/CrtPhpClient",
   "license": "MIT",
-  "require": {
-  },
-  "require-dev": {
-      "phpunit/phpunit": "*"
-  },
+  "require": {},
+  "require-dev": {},
   "autoload": {
     "psr-4": {
       "CrtPhpClient\\": "src/"
