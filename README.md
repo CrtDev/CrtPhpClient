@@ -82,9 +82,10 @@ You can browse the whole documentation at [crt.ru/api/doc](http://crt.ru/api/doc
 
 There is an optional api format - .json and .xml:
 
-[crt.ru/api/v1/marks.json](http://crt.ru/api/v1/marks.json) - json
-[crt.ru/api/v1/marks.xml](http://crt.ru/api/v1/marks.xml) - xml
-[crt.ru/api/v1/marks](http://crt.ru/api/v1/marks) - html page example
+ * [crt.ru/api/v1/marks.json](http://crt.ru/api/v1/marks.json) - json
+ * [crt.ru/api/v1/marks.xml](http://crt.ru/api/v1/marks.xml) - xml
+ * [crt.ru/api/v1/marks](http://crt.ru/api/v1/marks) - html page example
 
 By calling an URL with the parameter ?_doc=1, you will get the corresponding documentation:
-[crt.ru/api/v1/marks?_doc=1](http://crt.ru/api/v1/marks?_doc=1)
+
+ * [crt.ru/api/v1/marks?_doc=1](http://crt.ru/api/v1/marks?_doc=1)
