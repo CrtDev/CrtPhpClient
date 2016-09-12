@@ -9,6 +9,7 @@ namespace CrtPhpClient;
 class Crt
 {
     private $apiAddress;
+
     /**
      * example: http://crt.ru/api/v1/
      *
@@ -27,6 +28,16 @@ class Crt
     public function catalog()
     {
         return new Catalog($this->apiAddress);
+    }
+
+    /**
+     * Part card
+     *
+     * @return $this
+     */
+    public function part()
+    {
+        return new Part($this->apiAddress);
     }
 
     /**

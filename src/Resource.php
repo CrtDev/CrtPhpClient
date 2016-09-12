@@ -20,13 +20,19 @@ class Resource
         }
     }
 
-    protected function get($resource)
+    protected function getResource($resource)
     {
-        return json_decode(HttpClient::curlExec(
+        $response = json_decode(HttpClient::curlExec(
             $this->apiAddress.$resource.'.json',
             HttpMethod::GET,
             $this->query,
             $this->postFields
-        ), true)[$resource];
+        ), true);
+
+        if (array_key_exists($resource, $response)) {
+            return $response[$resource];
+        }
+
+        return $response;
     }
 }

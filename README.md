@@ -17,8 +17,6 @@ $ wget https://github.com/CrtDev/CrtPhpClient/archive/master.zip
 $ unzip master.zip
 ```
 
-
-
 ```php
 <?php
 
@@ -71,6 +69,7 @@ Tests
 -----
 
 ```bash
+$ composer require crtdev/crt-php-client:1.*@dev
 $ phpunit vendor/crtdev/crt-php-client
 ```
 

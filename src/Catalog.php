@@ -19,7 +19,7 @@ class Catalog extends Resource
             return $this;
         }
 
-        return $this->get('marks');
+        return $this->getResource('marks');
     }
 
     /**
@@ -33,7 +33,7 @@ class Catalog extends Resource
             return $this;
         }
 
-        return $this->get('markets');
+        return $this->getResource('markets');
     }
 
     /**
@@ -47,7 +47,7 @@ class Catalog extends Resource
             return $this;
         }
 
-        return $this->get('models');
+        return $this->getResource('models');
     }
 
     /**
@@ -61,7 +61,7 @@ class Catalog extends Resource
             return $this;
         }
 
-        return $this->get('frames');
+        return $this->getResource('frames');
     }
 
     /**
@@ -75,7 +75,7 @@ class Catalog extends Resource
             return $this;
         }
 
-        return $this->get('years');
+        return $this->getResource('years');
     }
 
     /**
@@ -84,6 +84,6 @@ class Catalog extends Resource
      */
     public function group()
     {
-        return $this->get('groups');
+        return $this->getResource('groups');
     }
 }
