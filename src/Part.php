@@ -12,4 +12,11 @@ class Part extends Resource
     {
         return $this->getResource("parts/$id");
     }
+
+    public function search($oem)
+    {
+        $this->query['oem'] = $oem;
+
+        return $this->getResource("parts");
+    }
 }
