@@ -4,7 +4,7 @@ CrtPhpClient
 Requirements
 ------------
 
- * PHP 5.3 and later
+ * PHP 5.3 or later
  * php-curl
 
 Getting Started
